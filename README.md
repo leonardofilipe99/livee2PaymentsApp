@@ -1,8 +1,7 @@
-# e2Payments Testes
+# Xique-Construa
 
-Estrutura basica de um projecto baseado em Javascript, criado para facilitar os testes de integracao de e2Payments.
+Estrutura basica de um projecto baseado em Javascript, criado para facilitar transicoes de valores no servico xitique da construa.
 
-Pode clonar e realizar testes como bem desejar.
 
 ## Requisitos
 
@@ -35,7 +34,7 @@ $ git clone https://github.com/joseseie/livee2PaymentsApp.git
 ### 02. Instalação de dependências:
 
 ```
-$ cd livee2PaymentsApp && yarn install
+$ cd xitique-construa && yarn install
 ```
 
 
@@ -44,3 +43,5 @@ $ cd livee2PaymentsApp && yarn install
 ```
 $ quasar dev
 ```
+### Orçamento
+

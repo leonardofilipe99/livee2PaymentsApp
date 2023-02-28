@@ -1,9 +1,9 @@
 {
-  "name": "live-app-mac",
+  "name": "xitique-construa",
   "version": "0.0.1",
-  "description": "Aplicativo para a Live",
-  "productName": "Live APp",
-  "author": "Jose Seie <joseeugenioseie@hotmail.com>",
+  "description": "Aplicativo para Gestao individual do xitique da construa",
+  "productName": "Xitique-Construa",
+  "author": "Leonardo Filipe <leonardogenguemo@gmail.com>",
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
@@ -15,7 +15,8 @@
     "quasar": "^2.0.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0",
-    "vuex": "^4.0.1"
+    "vuex": "^4.0.1",
+    "workbox-webpack-plugin": "^6.0.0"
   },
   "devDependencies": {
     "@quasar/app": "^3.0.0"

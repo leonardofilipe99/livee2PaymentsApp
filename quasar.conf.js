@@ -138,9 +138,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Live APp`,
-        short_name: `Live APp`,
-        description: `Aplicativo para a Live`,
+        name: `Xitique-Construa`,
+        short_name: `Xitique-Construa`,
+        description: `Aplicativo para gerir o Xitique da Construa individualmente.`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
