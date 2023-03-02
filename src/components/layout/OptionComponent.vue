@@ -1,5 +1,5 @@
 <template>
-<q-item :to="link" clickable v-ripple>
+<q-item :v-if="visualizar" :to="link" clickable v-ripple>
     <q-item-section avatar>
       <q-icon color="red" :name="iconName" />
     </q-item-section>
@@ -15,7 +15,11 @@ export default defineComponent({
     title: String,
     iconName: String,
     link: String,
+    visualizar: String,
+
   },
-  setup() {},
+  setup() {
+    return{}
+  },
 });
 </script>

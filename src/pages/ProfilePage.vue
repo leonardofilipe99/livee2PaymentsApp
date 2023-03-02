@@ -8,16 +8,31 @@
     class="q-pa-lg text-center justify-center"
   >
     <div class="text-center">Dados registados</div>
+
     <q-field
       class="q-mt-lg"
       outlined
       readonly
-      v-model="email"
+      v-model="name"
       color="secondary"
     >
       <template v-slot:control>
         <div class="self-center text-grey full-width no-outline">
-          {{ email }}
+          {{ name }}
+        </div>
+      </template>
+    </q-field>
+
+    <q-field
+      class="q-mt-lg"
+      outlined
+      readonly
+      v-model="contacto"
+      color="secondary"
+    >
+      <template v-slot:control>
+        <div class="self-center text-grey full-width no-outline">
+          {{ contacto }}
         </div>
       </template>
     </q-field>
@@ -28,7 +43,7 @@
         icon="home"
         class="q-mt-lg full-width"
         to="/home"
-        color="secondary"
+        color="primary"
         label="Pagina Inicial"
       />
     </div>
@@ -41,7 +56,8 @@ export default {
   name: "ProfilePage",
   data() {
     return {
-      email: "explicadorinc@gmail.com",
+      name: "Andréa Massamba",
+      contacto: "841234567",
     };
   },
 };

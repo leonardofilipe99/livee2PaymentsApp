@@ -44,7 +44,7 @@
     </div>
 
     <div class="text-right">
-      <q-btn flat color="grey-8" label="Criar conta" to="/signup" />
+      <q-btn @click="login" flat color="grey-8" label="Criar conta" to="/signup" />
     </div>
   </q-page>
 </template>
@@ -58,6 +58,11 @@ export default {
       password: "",
     };
   },
+  methods: {
+    login(){
+      this.isLogin=true
+    }
+  }
 };
 </script>
 

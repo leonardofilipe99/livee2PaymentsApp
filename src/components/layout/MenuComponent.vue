@@ -14,6 +14,7 @@
         :title="option.title"
         :iconName="option.iconName"
         :link="option.link"
+        :v-if="option.visualizar"
       />
     </q-list>
   </q-scroll-area>
@@ -23,20 +24,26 @@
 import { defineComponent } from "@vue/composition-api";
 import OptionComponent from "./OptionComponent.vue";
 
+
 export default defineComponent({
   components: {
     OptionComponent,
   },
   setup() {
     return {
+
       options: [
-        {title: 'Inicio', iconName: 'home', link: '/home'},
-        {title: 'Entrar', iconName: 'login', link: '/login'},
-        {title: 'Registar', iconName: 'edit_note', link: '/signup'},
-        {title: 'Ajuda', iconName: 'help', link: '/help'},
-        {title: 'Sair', iconName: 'power_settings_new', link: '/'}
+        {title: 'Inicio', iconName: 'home', link: '/home', visualizar: isLogin},
+        {title: 'Entrar', iconName: 'login', link: '/login', visualizar: isLogin},
+        {title: 'Registar', iconName: 'edit_note', link: '/signup', visualizar: isLogin},
+        {title: 'perfil', iconName: 'person', link: '/profile', visualizar: isLogin},
+        {title: 'Ajuda', iconName: 'help', link: '/help', visualizar: isLogin},
+        {title: 'Sair', iconName: 'power_settings_new', link: '/', visualizar: isLogin}
       ],
     };
+    methods: {
+
+    }
   },
 });
 </script>

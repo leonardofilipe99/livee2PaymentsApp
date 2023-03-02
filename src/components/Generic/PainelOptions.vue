@@ -24,6 +24,8 @@
         to="/p-recepcao"
       />
     </q-btn-group>
+
+
   </div>
 </template>
 

@@ -28,7 +28,42 @@
       :width="300"
       :breakpoint="400"
     >
-    <menu-component />
+      <q-scroll-area
+        style="
+          height: calc(100% - 150px);
+          margin-top: 150px;
+          border-right: 1px solid #ddd;
+        "
+      >
+        <q-list padding>
+          <OptionComponent title="Inicio" iconName="home" link="/home" />
+          <OptionComponent
+            title="Entrar"
+            iconName="login"
+            link="/login"
+            v-if="canShowLogin"
+          />
+          <OptionComponent
+            title="Registar"
+            iconName="edit_note"
+            link="/signup"
+            v-if="canShowLogin"
+          />
+          <OptionComponent
+            title="Perfil"
+            iconName="person"
+            link="/profile"
+            v-if="canShowProfile"
+          />
+          <OptionComponent title="Ajuda" iconName="help" link="/help" />
+
+          <OptionComponent
+            title="Sair"
+            iconName="power_settings_new"
+            @click="confirm"
+          />
+        </q-list>
+      </q-scroll-area>
 
       <q-img
         class="absolute-top"
@@ -54,16 +89,58 @@
 </template>
 
 <script>
-import MenuComponent from '../components/layout/MenuComponent.vue';
+import { useQuasar  } from "quasar";
+import OptionComponent from "src/components/layout/OptionComponent.vue";
+import { useRoute,useRouter } from "vue-router";
+import { computed } from "vue";
 
 export default {
-  name: "MainLayout",
   components: {
-    MenuComponent
+    OptionComponent,
   },
-  data() {
+  setup() {
+    const route = useRoute();
+
+    const $q = useQuasar();
+
+    const $router = useRouter();
+
+
+    const confirm = () => {
+      $q.dialog({
+        title: "Sair?",
+        ok: {
+          push: true,
+          color: "secondary",
+        },
+        message: "Tem certeza que deseja sair?",
+        cancel: { push: true, color: "primary" },
+        persistent: true,
+      })
+        .onOk(() => {
+          $router.push('/');
+        })
+        .onCancel(() => {})
+        .onDismiss(() => {});
+    };
+
+    const canShowProfile = computed(() => {
+      const isPainelPage = route.fullPath === "/painel";
+      const isProfilePage = route.fullPath === "/profile";
+      return isPainelPage || isProfilePage;
+    });
+
+    const canShowLogin = computed(() => {
+      const isPainelPage = route.fullPath === "/painel";
+      const isProfilePage = route.fullPath === "/profile";
+      return !(isPainelPage || isProfilePage);
+    });
+
     return {
       isDrawerOpen: false,
+      canShowProfile,
+      canShowLogin,
+      confirm
     };
   },
 };

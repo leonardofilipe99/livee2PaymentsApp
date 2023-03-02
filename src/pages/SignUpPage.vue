@@ -5,6 +5,14 @@
     <q-input
       class="q-mt-lg"
       standout="bg-secondary text-white"
+      v-model="name"
+      label="Nome e Apelido"
+      color="red"
+    />
+
+    <q-input
+      class="q-mt-lg"
+      standout="bg-secondary text-white"
       v-model="contacto"
       label="Contacto (8xxxxxxxx)"
       color="red"
@@ -51,10 +59,10 @@ export default {
   name: "SignUpPage",
   data() {
     return {
+      name: ref(""),
       contacto: ref(""),
       password: ref(""),
-	  confirmPassword: ref(""),
-
+      confirmPassword: ref(""),
     };
   },
 };

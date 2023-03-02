@@ -5,7 +5,7 @@
     q-pa-lg
     items-center
     windows-height
-    class="q-pa-xl text-center justify-center"
+    class="container q-pa-xl text-center justify-center"
   >
     <div class="text-center">
       <q-img src="/construa.png" alt="" style="" />
