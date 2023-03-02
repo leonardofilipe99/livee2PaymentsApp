@@ -28,54 +28,7 @@
       :width="300"
       :breakpoint="400"
     >
-      <q-scroll-area
-        style="
-          height: calc(100% - 150px);
-          margin-top: 150px;
-          border-right: 1px solid #ddd;
-        "
-      >
-        <q-list padding>
-          <q-item to="/painel" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon color="red" name="home" />
-            </q-item-section>
-            <q-item-section> Inicio </q-item-section>
-          </q-item>
-
-          <q-item to="/login" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon color="red" name="login" />
-            </q-item-section>
-            <q-item-section> Entrar </q-item-section>
-          </q-item>
-
-          <q-item to="/signup" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon color="red" name="edit_note" />
-            </q-item-section>
-
-            <q-item-section> Registar </q-item-section>
-          </q-item>
-
-          <q-item to="/help" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon color="red" name="help" />
-            </q-item-section>
-
-            <q-item-section> Ajuda </q-item-section>
-          </q-item>
-
-          <q-item to="/" clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon color="red" name="power_settings_new" />
-            </q-item-section>
-
-            <q-item-section> Sair </q-item-section>
-          </q-item>
-
-        </q-list>
-      </q-scroll-area>
+    <menu-component />
 
       <q-img
         class="absolute-top"
@@ -101,10 +54,14 @@
 </template>
 
 <script>
+import MenuComponent from '../components/layout/MenuComponent.vue';
+
 export default {
   name: "MainLayout",
+  components: {
+    MenuComponent
+  },
   data() {
-    //https://www.olabeira.com/custom/domain_1/image_files/sitemgr_photo_3261.png
     return {
       isDrawerOpen: false,
     };

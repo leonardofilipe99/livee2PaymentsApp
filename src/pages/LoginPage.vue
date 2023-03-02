@@ -1,6 +1,12 @@
+
 <template>
   <q-page
-    class="bg-light window-height window-width q-pa-lg justify-center items-center"
+    flex
+    scroll="no"
+    q-pa-lg
+    items-center
+    windows-height
+    class="q-pa-lg text-center justify-center"
   >
     <q-input
       class="q-mt-lg"
@@ -44,7 +50,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 export default {
   name: "LoginPage",
   data() {
